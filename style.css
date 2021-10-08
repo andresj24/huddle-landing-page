@@ -38,7 +38,7 @@ body {
         "footer"
         ;
     max-width: 100%;
-    min-height: 100vh;
+    min-height: 95vh;
 }
 
 header {
@@ -49,12 +49,15 @@ header {
 header img {
     width: 125px;
 }
-
-.principal-img img {
+.principal-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     grid-area: content1;
+    margin:  5rem 3.5rem 5.5rem 3.5rem;;
+}
+.principal-img img {
     max-width: 100%;
-    margin-bottom: 5.5rem;
-    padding: 5rem 3.5rem 0 3.5rem;
 }
 
 .content {
@@ -80,7 +83,7 @@ header img {
 
 .btn button {
     flex: 1;
-    min-width: 220px;
+    width: 220px;
     max-width: 400px;
     height: 45px;
     margin: 0 auto 7rem auto;
@@ -151,14 +154,46 @@ footer {
         background: none;    
     }
 }
-@media (min-width: 768px) {
+@media screen and (min-width: 800px) {
+    body {
+        background-image: url(images/bg-desktop.svg);
+    }
     .grid-container {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto auto auto;
+        grid-template-columns: 0.9fr 0.8fr;
+        grid-template-rows: 13% 75% 10%;
         grid-template-areas: 
             "header header"
             "content1 content2"
             "footer footer";
-        gap: 0.2rem;
     }
+    header img{
+        width: 225px;
+        padding-left: 5rem;
+        padding-right: 0;
+    }
+    .principal-img img {
+        margin: 0;
+        padding: 0rem 0 0 5rem;
+        margin-bottom: 0;
+    }
+    .content {
+        margin: 0;
+        padding: 8rem 16rem 0 1.5rem;
+        text-align: initial;
+    }
+    .content h1 {
+        font-size: 4rem;
+    }
+    .btn {
+        justify-content: flex-start;
+    }
+    .btn button {
+        max-width: 180px;
+        margin: 0;
+    }
+    .icons {
+        justify-content: flex-end;
+        padding-right: 16rem;
+    }
+    
 }
