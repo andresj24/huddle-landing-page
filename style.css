@@ -30,16 +30,19 @@ body {
 .grid-container {
     display: grid;
     grid-template-columns: 1fr;
+    grid-template-rows: auto;
     grid-template-areas: 
-        'header'
-        'main'
-        'footer';
+        "header"
+        "content1"
+        "content2"
+        "footer"
+        ;
     max-width: 100%;
-    width: 375px;
     min-height: 100vh;
 }
 
 header {
+    grid-area: header;
     margin-top: 1rem;
     padding: 2.5rem 3.5rem 0 3.5rem;
 }
@@ -48,18 +51,14 @@ header img {
 }
 
 .principal-img img {
+    grid-area: content1;
     max-width: 100%;
     margin-bottom: 5.5rem;
     padding: 5rem 3.5rem 0 3.5rem;
 }
-.fondo {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: fit-content;
-    background-color: hsl(257, 40%, 49%);
-}
+
 .content {
+    grid-area: content2;
     padding: 0 3.5rem;
     text-align: center;
 }
@@ -73,11 +72,18 @@ header img {
     margin-bottom: 2.5rem;
     line-height: 1.8;
 }
-.content button {
-    display: inline-block;
-    width: 220px;
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn button {
+    flex: 1;
+    min-width: 220px;
+    max-width: 400px;
     height: 45px;
-    margin-bottom: 7rem;
+    margin: 0 auto 7rem auto;
     background-color: var(--fonts);
     border-radius: 2.5rem;
     border: none;
@@ -85,16 +91,24 @@ header img {
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
     color: var(--body);
-    
 }
 
-.content button:hover {
+.btn button:hover {
     background-color: var(--hover-color);
     color: var(--fonts);
     cursor: pointer;
 }
+.content .fondo {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: fit-content;
+    background-color: hsl(257, 40%, 49%);
+}
 
-
+footer {
+    grid-area: footer;
+}
 .icons {
     display: flex;
     justify-content: center;
@@ -128,4 +142,23 @@ header img {
     
 .attribution a { 
     color: var(--fonts); 
+}
+
+@media (min-width: 400px) {
+    .content .fondo {
+        width: 100%;
+        height: fit-content;
+        background: none;    
+    }
+}
+@media (min-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas: 
+            "header header"
+            "content1 content2"
+            "footer footer";
+        gap: 0.2rem;
+    }
 }
