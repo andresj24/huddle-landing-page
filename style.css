@@ -28,8 +28,7 @@ body {
     background-repeat: no-repeat;
     background-size: contain;
     color: var(--fonts);
-/*     overflow:auto;
- */}
+}
 
 .grid-container {
     display: grid;
@@ -104,6 +103,7 @@ header img {
     background-color: var(--hover-color);
     color: var(--fonts);
     cursor: pointer;
+    transition: 0.5s ease-in-out;
 }
 .content .fondo {
     margin: 0;
@@ -139,12 +139,14 @@ footer {
     border-color: var(--hover-color);
     color: var(--hover-color);
     cursor: pointer;
+    transition: 0.25s ease-in-out;
 } 
 
 
 .attribution { 
     font-size: 11px; 
     text-align: center;
+    margin-bottom: 0;
 }
     
 .attribution a { 
@@ -169,8 +171,7 @@ footer {
         background-size: contain;
     }
     .grid-container {
-/*         flex: 1; 
- */        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
         grid-template-rows: auto auto auto;
         grid-template-areas: 
             "header header"
