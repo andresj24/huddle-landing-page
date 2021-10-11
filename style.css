@@ -17,6 +17,9 @@ html {
 }
 
 body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: 'Open Sans', sans-serif;
     font-size: 1.6rem;
     font-weight: 400;
@@ -25,7 +28,8 @@ body {
     background-repeat: no-repeat;
     background-size: contain;
     color: var(--fonts);
-}
+/*     overflow:auto;
+ */}
 
 .grid-container {
     display: grid;
@@ -38,7 +42,7 @@ body {
         "footer"
         ;
     max-width: 100%;
-    min-height: 95vh;
+    height: 100vh;
 }
 
 header {
@@ -117,7 +121,7 @@ footer {
     justify-content: center;
     align-items: center;
     list-style: none;
-    margin-bottom: 2rem;
+    margin-bottom: .1rem;
 }
 .fab {
     display: flex;
@@ -156,11 +160,18 @@ footer {
 }
 @media screen and (min-width: 800px) {
     body {
+        background-size: cover;
+    }
+}
+@media screen and (min-width: 1100px) {
+    body {
         background-image: url(images/bg-desktop.svg);
+        background-size: contain;
     }
     .grid-container {
-        grid-template-columns: 0.9fr 0.8fr;
-        grid-template-rows: 13% 75% 10%;
+/*         flex: 1; 
+ */        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto;
         grid-template-areas: 
             "header header"
             "content1 content2"
@@ -178,7 +189,7 @@ footer {
     }
     .content {
         margin: 0;
-        padding: 8rem 16rem 0 1.5rem;
+        padding: 8rem 15rem 0 1.5rem;
         text-align: initial;
     }
     .content h1 {
