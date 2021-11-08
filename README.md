@@ -26,7 +26,7 @@ Users should be able to:
 
 ### Screenshot
 
-![capture.png](/images/capture.jpg)
+![capture.png](https://github.com/andresj24/huddle-landing-page/blob/main/images/capture.png)
 
 
 
